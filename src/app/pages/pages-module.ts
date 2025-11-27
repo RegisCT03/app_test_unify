@@ -6,6 +6,7 @@ import { AppRoutingModule } from '../pages/pages-routing-module';
 import { HomeComponent } from './home/home';
 import { RegisterComponent } from './register/register';
 import { LoginComponent } from './login/login';
+import { Booking } from './booking/booking';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { LoginComponent } from './login/login';
     CommonModule,
     ReactiveFormsModule,
     AppRoutingModule
+  ],
+  declarations: [
+    Booking
   ]
 })
 export class PagesModule { }
