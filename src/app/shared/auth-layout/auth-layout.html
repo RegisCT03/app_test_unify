@@ -1,0 +1,14 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="left-panel">
+      <div class="decoration-image">
+        <img [src]="decorationImage" alt="Decoración">
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <h1 class="auth-title">{{ title }}</h1>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
