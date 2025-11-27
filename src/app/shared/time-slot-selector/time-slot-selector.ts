@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-time-slot-selector',
-  standalone: false,
   templateUrl: './time-slot-selector.html',
-  styleUrl: './time-slot-selector.css',
+  styleUrls: ['./time-slot-selector.css']
 })
-export class TimeSlotSelector {
+export class TimeSlotSelectorComponent {
+  @Input() time: string = '';
+  @Input() available: boolean = true;
+  @Input() selected: boolean = false;
+  @Output() slotSelected = new EventEmitter<void>();
 
+  onSelect(): void {
+    if (this.available) {
+      this.slotSelected.emit();
+    }
+  }
 }

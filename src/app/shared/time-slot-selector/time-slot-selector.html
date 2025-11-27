@@ -1,1 +1,9 @@
-<p>time-slot-selector works!</p>
+<button 
+  class="time-slot"
+  [class.available]="available"
+  [class.unavailable]="!available"
+  [class.selected]="selected"
+  [disabled]="!available"
+  (click)="onSelect()">
+  {{ time }}
+</button>

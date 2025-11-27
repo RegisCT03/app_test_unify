@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TimeSlotSelector } from './time-slot-selector';
+import { TimeSlotSelectorComponent } from './time-slot-selector';
 
-describe('TimeSlotSelector', () => {
-  let component: TimeSlotSelector;
-  let fixture: ComponentFixture<TimeSlotSelector>;
+describe('TimeSlotSelectorComponent', () => {
+  let component: TimeSlotSelectorComponent;
+  let fixture: ComponentFixture<TimeSlotSelectorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TimeSlotSelector]
+      declarations: [TimeSlotSelectorComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TimeSlotSelector);
+    fixture = TestBed.createComponent(TimeSlotSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -8,10 +8,10 @@ import { FooterComponent } from './footer/footer';
 import { HeroSectionComponent } from './hero-section/hero-section';
 import { TechniqueCardComponent } from './technique-card/technique-card';
 import { BenefitCardComponent } from './benefit-card/benefit-card';
-import { TimeSlotSelector } from './time-slot-selector/time-slot-selector';
-import { ServiceCard } from './service-card/service-card';
-import { BookingModal } from './booking-modal/booking-modal';
-import { ConfirmationModal } from './confirmation-modal/confirmation-modal';
+import { TimeSlotSelectorComponent } from './time-slot-selector/time-slot-selector';
+import { ServiceCardComponent } from './service-card/service-card';
+import { BookingModalComponent } from './booking-modal/booking-modal';
+import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal';
 
 @NgModule({
   imports: [
@@ -22,6 +22,10 @@ import { ConfirmationModal } from './confirmation-modal/confirmation-modal';
     FooterComponent,
     HeroSectionComponent,
     TechniqueCardComponent,
+    ServiceCardComponent,
+    BookingModalComponent,
+    ConfirmationModalComponent,
+    TimeSlotSelectorComponent,
     BenefitCardComponent
   ],
   exports: [
@@ -32,11 +36,5 @@ import { ConfirmationModal } from './confirmation-modal/confirmation-modal';
     TechniqueCardComponent,
     BenefitCardComponent
   ],
-  declarations: [
-    TimeSlotSelector,
-    ServiceCard,
-    BookingModal,
-    ConfirmationModal
-  ]
 })
 export class SharedModule { }
