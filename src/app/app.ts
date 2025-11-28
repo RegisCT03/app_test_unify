@@ -1,15 +1,11 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'; 
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  standalone: true,              
-  imports: [CommonModule, RouterModule],   
   templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  standalone: false,
+  styleUrl: './app.css'
 })
-
-export class AppComponent {
-  title = 'massage-app';
+export class App {
+  protected readonly title = signal('testing');
 }
