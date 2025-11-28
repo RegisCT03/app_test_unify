@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 interface Service {
   id: string;
@@ -10,8 +9,6 @@ interface Service {
 
 @Component({
   selector: 'app-service-card',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './service-card.html',
   styleUrls: ['./service-card.css']
 })
