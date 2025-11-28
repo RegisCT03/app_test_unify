@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { StatsCardComponent } from '../../shared/stats-card/stats-card';
-import { AppointmentCardComponent } from '../../shared/appointment-card/appointment-card';
-
+import { AppointmentCardComponent } from '../../shared/appointment-card/appointment-card.js';
 interface Appointment {
   id: string;
   clientName: string;
@@ -21,6 +20,7 @@ interface Stats {
 
 @Component({
   selector: 'app-dashboard',
+  standalone: true,
   imports: [CommonModule, DatePipe, StatsCardComponent, AppointmentCardComponent],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css']

@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 interface Appointment {
   id: string;
@@ -11,6 +12,8 @@ interface Appointment {
 
 @Component({
   selector: 'app-appointment-card',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './appointment-card.html',
   styleUrls: ['./appointment-card.css']
 })
