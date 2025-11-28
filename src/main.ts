@@ -3,6 +3,11 @@ import { AppComponent } from './app/app';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes'; 
 import { provideBrowserGlobalErrorListeners } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+
+registerLocaleData(localeEs);
 
 bootstrapApplication(AppComponent, {
   providers: [

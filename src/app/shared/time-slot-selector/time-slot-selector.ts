@@ -1,7 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-time-slot-selector',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './time-slot-selector.html',
   styleUrls: ['./time-slot-selector.css']
 })
