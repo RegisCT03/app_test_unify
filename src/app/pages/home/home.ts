@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BenefitCardComponent } from '../../shared/benefit-card/benefit-card';
+import { BenefitCardComponent } from '../shared-user/benefit-card/benefit-card';
 import { HeaderComponent } from '../../shared/header/header'; 
-import { HeroSectionComponent } from '../../shared/hero-section/hero-section';
-import { TechniqueCardComponent } from '../../shared/technique-card/technique-card';    
+import { HeroSectionComponent } from '../shared-user/hero-section/hero-section';
+import { TechniqueCardComponent } from '../shared-user/technique-card/technique-card';    
 import { FooterComponent } from '../../shared/footer/footer'; 
 
 

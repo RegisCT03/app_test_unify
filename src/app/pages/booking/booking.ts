@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FooterComponent } from '../../shared/footer/footer';
 import { ConfirmationModalComponent } from '../../shared/confirmation-modal/confirmation-modal';
-import { BookingModalComponent } from '../../shared/booking-modal/booking-modal';
+import { BookingModalComponent } from '../shared-user/booking-modal/booking-modal';
 import { TimeSlotSelectorComponent } from '../../shared/time-slot-selector/time-slot-selector';
 import { HeaderComponent } from '../../shared/header/header';
 
