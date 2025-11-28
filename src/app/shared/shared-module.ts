@@ -12,7 +12,8 @@ import { TimeSlotSelectorComponent } from './time-slot-selector/time-slot-select
 import { ServiceCardComponent } from './service-card/service-card';
 import { BookingModalComponent } from '../pages/shared-user/booking-modal/booking-modal';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal';
-import { AppointmentCard } from './appointment-card/appointment-card';
+import { AppointmentCardComponent } from './appointment-card/appointment-card';
+import { AppointmentModalComponent } from './appointment-modal/appointment-modal';
 
 @NgModule({
   imports: [
@@ -27,7 +28,9 @@ import { AppointmentCard } from './appointment-card/appointment-card';
     BookingModalComponent,
     ConfirmationModalComponent,
     TimeSlotSelectorComponent,
-    BenefitCardComponent
+    BenefitCardComponent, 
+    AppointmentModalComponent,
+    AppointmentCardComponent
   ],
   exports: [
     AuthLayoutComponent,
@@ -36,9 +39,6 @@ import { AppointmentCard } from './appointment-card/appointment-card';
     HeroSectionComponent,
     TechniqueCardComponent,
     BenefitCardComponent
-  ],
-  declarations: [
-    AppointmentCard
   ],
 })
 export class SharedModule { }
