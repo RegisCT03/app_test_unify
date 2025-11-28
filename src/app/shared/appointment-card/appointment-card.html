@@ -1,0 +1,21 @@
+<div class="appointment-card" (click)="onViewDetails()">
+  <div class="appointment-header">
+    <div class="service-icon">{{ getServiceIcon() }}</div>
+    <div class="status-badge" [style.background-color]="getStatusColor()">
+      {{ getStatusText() }}
+    </div>
+  </div>
+
+  <div class="appointment-body">
+    <h3 class="client-name">{{ appointment.clientName }}</h3>
+    <p class="service-name">{{ appointment.service }}</p>
+    <div class="appointment-time">
+      <span class="time-icon">🕐</span>
+      <span class="time-text">{{ appointment.time }}</span>
+    </div>
+  </div>
+
+  <div class="appointment-footer">
+    <button class="btn-details">Ver detalles</button>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="service-card" [class.selected]="selected" (click)="onSelect()">
+  <div class="service-icon">
+    <img [src]="service.icon" [alt]="service.title">
+  </div>
+  <div class="service-content">
+    <h4 class="service-title">{{ service.title }}</h4>
+    <p class="service-description">{{ service.description }}</p>
+  </div>
+  <div class="selection-indicator" *ngIf="selected">
+    <span class="checkmark">✓</span>
+  </div>
+</div>

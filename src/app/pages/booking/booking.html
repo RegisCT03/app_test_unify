@@ -1,0 +1,79 @@
+<div class="booking-container">
+  <app-header></app-header>
+
+  <section class="booking-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Crea tú <span class="highlight">momento relajante</span></h1>
+    </div>
+  </section>
+
+  <section class="time-selection">
+    <div class="container">
+      <h2 class="section-title">Selecciona tú <span class="highlight">horario</span></h2>
+      
+      <div class="date-info">
+        <h3 class="date-title">{{ selectedDate | date:'EEEE d \'de\' MMMM \'del\' yyyy':'':'es' }}</h3>
+      </div>
+
+      <div class="time-period">
+        <h4 class="period-title">Matutino</h4>
+        <div class="slots-grid">
+          <app-time-slot-selector
+            *ngFor="let slot of morningSlots"
+            [time]="slot.time"
+            [available]="slot.available"
+            [selected]="selectedTimeSlot === slot.id"
+            (slotSelected)="selectTimeSlot(slot.id)">
+          </app-time-slot-selector>
+        </div>
+      </div>
+
+      <div class="time-period">
+        <h4 class="period-title">Vespertino</h4>
+        <div class="slots-grid">
+          <app-time-slot-selector
+            *ngFor="let slot of eveningSlots"
+            [time]="slot.time"
+            [available]="slot.available"
+            [selected]="selectedTimeSlot === slot.id"
+            (slotSelected)="selectTimeSlot(slot.id)">
+          </app-time-slot-selector>
+        </div>
+      </div>
+
+      <div class="booking-note">
+        <p class="note-icon">📌</p>
+        <p class="note-text">
+          <strong>Nota:</strong> Para experiencias, todos los horarios disponibles son los días lunes, considéralo para la elección de tu horario, los precios los encontrarás al seleccionar un horario.
+        </p>
+      </div>
+
+      <div class="promo-image">
+        <img src="" alt="Promoción de masaje">
+      </div>
+    </div>
+  </section>
+
+  <app-booking-modal
+    *ngIf="showServiceModal"
+    [date]="selectedDate"
+    [timeSlot]="getSelectedTimeSlotText()"
+    [services]="services"
+    [selectedService]="selectedService"
+    (serviceSelected)="selectService($event)"
+    (close)="closeServiceModal()"
+    (proceed)="proceedToPayment()">
+  </app-booking-modal>
+
+  <app-confirmation-modal
+    *ngIf="showConfirmationModal"
+    [date]="selectedDate"
+    [timeSlot]="getSelectedTimeSlotText()"
+    [service]="selectedService"
+    (confirm)="confirmBooking()"
+    (print)="printBooking()"
+    (close)="closeConfirmationModal()">
+  </app-confirmation-modal>
+
+  <app-footer></app-footer>
+</div>
