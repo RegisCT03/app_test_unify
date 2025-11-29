@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientListComponent } from '../../shared/client-list/client-list';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 interface Client {
@@ -37,6 +38,11 @@ export class ClientsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadClients();
+  }
+  constructor(private router: Router) {}
+  backToDashboard() {
+    localStorage.removeItem('token'); 
+    this.router.navigate(['/admin/dashboard']);
   }
 
   loadClients(): void {

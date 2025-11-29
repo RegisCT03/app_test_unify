@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ServiceEditorComponent } from '../../shared/service-editor/service-editor';
+import { Router } from '@angular/router';
 
 interface Service {
   id?: string;
@@ -27,6 +28,11 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadServices();
+  }
+  constructor(private router: Router) {}
+  backToDashboard() {
+    localStorage.removeItem('token'); 
+    this.router.navigate(['/admin/dashboard']);
   }
 
   loadServices(): void {

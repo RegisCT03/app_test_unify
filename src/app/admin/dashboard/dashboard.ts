@@ -29,11 +29,26 @@ interface Stats {
 })
 export class DashboardComponent implements OnInit {
   selectedDate: Date = new Date();
+  selectedAppointment: Appointment | null = null;
+  showAppointmentModal: boolean = false;
   constructor(private router: Router) {}
 
   logout() {
     localStorage.removeItem('token'); 
     this.router.navigate(['/login']);
+  }
+
+  GoToappointments() {
+    localStorage.removeItem('token'); 
+    this.router.navigate(['/admin/appointments']);
+  }
+
+  goToClients(): void {
+    this.router.navigate(['/admin/clients']);
+  }
+
+  goToServices(): void {
+    this.router.navigate(['/admin/services']);
   }
 
   
@@ -70,7 +85,33 @@ export class DashboardComponent implements OnInit {
 
   viewAppointmentDetails(appointment: Appointment): void {
     console.log('Ver detalles:', appointment);
+    this.selectedAppointment = appointment;
+    this.showAppointmentModal = true;
   }
+
+  closeAppointmentModal(): void {
+    this.showAppointmentModal = false;
+    this.selectedAppointment = null;
+  }
+
+  onStatusChange(newStatus: string): void {
+    if (this.selectedAppointment) {
+      const index = this.appointments.findIndex(a => a.id === this.selectedAppointment!.id);
+      if (index !== -1) {
+        this.appointments[index].status = newStatus as any;
+      }
+    }
+    this.closeAppointmentModal();
+  }
+
+  onCancelAppointment(id: string): void {
+    const index = this.appointments.findIndex(a => a.id === id);
+    if (index !== -1) {
+      this.appointments[index].status = 'cancelled';
+    }
+    this.closeAppointmentModal();
+  }
+
 
   getStatusColor(status: string): string {
     const colors: { [key: string]: string } = {
