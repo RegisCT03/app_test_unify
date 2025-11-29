@@ -1,0 +1,114 @@
+<div class="services-container">
+  <header class="page-header">
+    <button class="btn-back" routerLink="/admin/dashboard">← Volver al Dashboard</button>
+    <div class="header-content">
+      <h1 class="page-title">Gestión de <span class="highlight">Servicios</span></h1>
+      <button class="btn-create" (click)="onCreateService()">
+        ➕ Crear Nuevo Servicio
+      </button>
+    </div>
+  </header>
+
+  <div class="services-content">
+    <section class="stats-section">
+      <div class="stat-card">
+        <div class="stat-icon">📊</div>
+        <div class="stat-content">
+          <p class="stat-label">Total Servicios</p>
+          <p class="stat-value">{{ services.length }}</p>
+        </div>
+      </div>
+
+      <div class="stat-card active">
+        <div class="stat-icon">✓</div>
+        <div class="stat-content">
+          <p class="stat-label">Servicios Activos</p>
+          <p class="stat-value">{{ getActiveServicesCount() }}</p>
+        </div>
+      </div>
+
+      <div class="stat-card inactive">
+        <div class="stat-icon">⏸</div>
+        <div class="stat-content">
+          <p class="stat-label">Servicios Inactivos</p>
+          <p class="stat-value">{{ getInactiveServicesCount() }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-list">
+      <div class="list-header">
+        <h2 class="list-title">Servicios Disponibles</h2>
+        <p class="list-subtitle">Gestiona los servicios que ofreces a tus clientes</p>
+      </div>
+
+      <div class="services-grid">
+        <div 
+          class="service-item" 
+          *ngFor="let service of services"
+          [class.inactive]="!service.active">
+          
+          <div class="service-header">
+            <div class="service-icon">
+              <img [src]="service.icon" [alt]="service.title">
+            </div>
+            <div class="status-toggle">
+              <label class="toggle-switch">
+                <input 
+                  type="checkbox" 
+                  [checked]="service.active"
+                  (change)="toggleServiceStatus(service)">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="service-body">
+            <h3 class="service-title">{{ service.title }}</h3>
+            <p class="service-description">{{ service.description }}</p>
+            
+            <div class="service-details">
+              <div class="detail-item">
+                <span class="detail-label">Duración:</span>
+                <span class="detail-value">{{ service.duration }} min</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Precio:</span>
+                <span class="detail-value">${{ service.price }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-footer">
+            <button 
+              class="btn-edit"
+              (click)="onEditService(service)">
+              ✏️ Editar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="empty-state" *ngIf="services.length === 0">
+        <div class="empty-icon">💆</div>
+        <h3 class="empty-title">No hay servicios registrados</h3>
+        <p class="empty-message">Crea tu primer servicio para comenzar</p>
+        <button class="btn-create-large" (click)="onCreateService()">
+          ➕ Crear Primer Servicio
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-overlay" *ngIf="showEditor" (click)="closeEditor()">
+    <div class="editor-container" (click)="$event.stopPropagation()">
+      <app-service-editor
+        [service]="selectedService"
+        [mode]="editorMode"
+        (save)="onSaveService($event)"
+        (cancel)="closeEditor()"
+        (delete)="onDeleteService($event)">
+      </app-service-editor>
+    </div>
+  </div>
+</div>

@@ -15,6 +15,7 @@ interface Service {
 
 @Component({
   selector: 'app-service-editor',
+  standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './service-editor.html',
   styleUrls: ['./service-editor.css']
