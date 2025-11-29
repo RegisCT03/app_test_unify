@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { StatsCardComponent } from '../../shared/stats-card/stats-card';
 import { AppointmentCardComponent } from '../../shared/appointment-card/appointment-card.js';
+import { Router } from '@angular/router';
+
 interface Appointment {
   id: string;
   clientName: string;
@@ -27,6 +29,13 @@ interface Stats {
 })
 export class DashboardComponent implements OnInit {
   selectedDate: Date = new Date();
+  constructor(private router: Router) {}
+
+  logout() {
+    localStorage.removeItem('token'); 
+    this.router.navigate(['/login']);
+  }
+
   
   stats: Stats[] = [
     { title: 'Citas Hoy', value: 8, icon: '📅', color: '#3b5998' },
