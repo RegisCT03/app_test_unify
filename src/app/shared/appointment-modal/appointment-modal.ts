@@ -16,6 +16,7 @@ interface Appointment {
 
 @Component({
   selector: 'app-appointment-modal',
+  standalone: true,
   imports: [DatePipe, CommonModule],
   templateUrl: './appointment-modal.html',
   styleUrls: ['./appointment-modal.css']

@@ -1,0 +1,71 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <div class="header-content">
+      <h1 class="dashboard-title">Maneja <span class="highlight">tú negocio</span></h1>
+      <div class="user-info">
+        <span class="user-name">Admin</span>
+        <button class="btn-logout" (click)="logout()">Cerrar Sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard-main">
+    <section class="stats-section">
+      <app-stats-card
+        *ngFor="let stat of stats"
+        [title]="stat.title"
+        [value]="stat.value"
+        [icon]="stat.icon"
+        [color]="stat.color">
+      </app-stats-card>
+    </section>
+
+    <section class="appointments-section">
+      <div class="section-header">
+        <h2 class="section-title">Observa tus <span class="highlight">citas pendientes</span></h2>
+        <div class="date-selector">
+          <h3 class="current-date">{{ selectedDate | date:'EEEE d \'de\' MMMM \'del\' yyyy':'':'es' }}</h3>
+          <p class="date-subtitle">Haz para más información detallada de la cita</p>
+        </div>
+      </div>
+
+      <div class="appointments-grid">
+        <app-appointment-card
+          *ngFor="let appointment of appointments"
+          [appointment]="appointment"
+          (viewDetails)="viewAppointmentDetails($event)">
+        </app-appointment-card>
+      </div>
+
+      <div class="view-all">
+        <button class="btn-view-all" routerLink="/admin/appointments">
+          Revisa las últimas clientes atendidas
+        </button>
+      </div>
+    </section>
+
+    <section class="quick-actions">
+      <div class="action-card" routerLink="/admin/clients">
+        <div class="action-icon">👥</div>
+        <h3 class="action-title">Consulta el Historial de clientes</h3>
+        <p class="action-description">Revisa y consulta la información de tus clientes</p>
+        <button class="btn-action">Consultar historial</button>
+      </div>
+
+      <div class="action-card" routerLink="/admin/services">
+        <div class="action-icon">💆</div>
+        <h3 class="action-title">Gestiona tus servicios</h3>
+        <p class="action-description">Edita, agrega o elimina los servicios que ofreces</p>
+        <button class="btn-action">Gestionar mis servicios</button>
+      </div>
+    </section>
+
+    <section class="promo-section">
+      <img src="" alt="Mesa de masajes" class="promo-image">
+    </section>
+  </div>
+
+  <footer class="dashboard-footer">
+    <p>© 2025 Salud & Paz - Panel de Administración</p>
+  </footer>
+</div>
