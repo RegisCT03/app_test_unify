@@ -1,6 +1,6 @@
 <div class="services-container">
   <header class="page-header">
-    <button class="btn-back" routerLink="/admin/dashboard">← Volver al Dashboard</button>
+    <button class="btn-back" (click)="backToDashboard()">← Volver al Dashboard</button>
     <div class="header-content">
       <h1 class="page-title">Gestión de <span class="highlight">Servicios</span></h1>
       <button class="btn-create" (click)="onCreateService()">

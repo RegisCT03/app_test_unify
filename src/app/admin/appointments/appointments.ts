@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentCardComponent } from '../../shared/appointment-card/appointment-card.js';
 import { AppointmentModalComponent } from '../../shared/appointment-modal/appointment-modal';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 interface Appointment {
@@ -23,6 +24,7 @@ interface Appointment {
   styleUrls: ['./appointments.css']
 })
 export class AppointmentsComponent implements OnInit {
+  constructor(private router: Router) {}
   appointments: Appointment[] = [];
   filteredAppointments: Appointment[] = [];
   selectedAppointment: Appointment | null = null;
@@ -32,6 +34,11 @@ export class AppointmentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadAppointments();
+  }
+
+  backToDashboard() {
+    localStorage.removeItem('token'); 
+    this.router.navigate(['/admin/dashboard']);
   }
 
   loadAppointments(): void {

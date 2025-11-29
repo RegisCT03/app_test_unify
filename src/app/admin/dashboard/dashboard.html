@@ -25,7 +25,7 @@
         <h2 class="section-title">Observa tus <span class="highlight">citas pendientes</span></h2>
         <div class="date-selector">
           <h3 class="current-date">{{ selectedDate | date:'EEEE d \'de\' MMMM \'del\' yyyy':'':'es' }}</h3>
-          <p class="date-subtitle">Haz para más información detallada de la cita</p>
+          <p class="date-subtitle">Haz click para más información detallada de la cita</p>
         </div>
       </div>
 
@@ -38,21 +38,21 @@
       </div>
 
       <div class="view-all">
-        <button class="btn-view-all" routerLink="/admin/appointments">
-          Revisa las últimas clientes atendidas
+        <button class="btn-view-all" (click)="GoToappointments()">
+          Revisa los últimos clientes atendidos
         </button>
       </div>
     </section>
 
     <section class="quick-actions">
-      <div class="action-card" routerLink="/admin/clients">
+      <div class="action-card" (click)="goToClients()">
         <div class="action-icon">👥</div>
         <h3 class="action-title">Consulta el Historial de clientes</h3>
         <p class="action-description">Revisa y consulta la información de tus clientes</p>
         <button class="btn-action">Consultar historial</button>
       </div>
 
-      <div class="action-card" routerLink="/admin/services">
+      <div class="action-card" (click)="goToServices()">
         <div class="action-icon">💆</div>
         <h3 class="action-title">Gestiona tus servicios</h3>
         <p class="action-description">Edita, agrega o elimina los servicios que ofreces</p>
