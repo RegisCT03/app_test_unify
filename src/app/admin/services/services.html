@@ -1,10 +1,18 @@
 <div class="services-container">
   <header class="page-header">
-    <button class="btn-back" (click)="backToDashboard()">← Volver al Dashboard</button>
+    <button class="btn-back" (click)="backToDashboard()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 0.5rem;">
+        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Volver al Dashboard
+    </button>
     <div class="header-content">
       <h1 class="page-title">Gestión de <span class="highlight">Servicios</span></h1>
       <button class="btn-create" (click)="onCreateService()">
-        ➕ Crear Nuevo Servicio
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Crear Nuevo Servicio
       </button>
     </div>
   </header>
@@ -12,7 +20,12 @@
   <div class="services-content">
     <section class="stats-section">
       <div class="stat-card">
-        <div class="stat-icon">📊</div>
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3V21H21" stroke="#354968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 17V9M13 17V5M8 17V13" stroke="#354968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div class="stat-content">
           <p class="stat-label">Total Servicios</p>
           <p class="stat-value">{{ services.length }}</p>
@@ -20,7 +33,11 @@
       </div>
 
       <div class="stat-card active">
-        <div class="stat-icon">✓</div>
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 6L9 17L4 12" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div class="stat-content">
           <p class="stat-label">Servicios Activos</p>
           <p class="stat-value">{{ getActiveServicesCount() }}</p>
@@ -28,7 +45,11 @@
       </div>
 
       <div class="stat-card inactive">
-        <div class="stat-icon">⏸</div>
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 9V15M14 9V15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#f39c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div class="stat-content">
           <p class="stat-label">Servicios Inactivos</p>
           <p class="stat-value">{{ getInactiveServicesCount() }}</p>
@@ -83,18 +104,30 @@
             <button 
               class="btn-edit"
               (click)="onEditService(service)">
-              ✏️ Editar
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.5 2.50023C18.8978 2.1024 19.4374 1.87891 20 1.87891C20.5626 1.87891 21.1022 2.1024 21.5 2.50023C21.8978 2.89805 22.1213 3.43762 22.1213 4.00023C22.1213 4.56284 21.8978 5.1024 21.5 5.50023L12 15.0002L8 16.0002L9 12.0002L18.5 2.50023Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Editar
             </button>
           </div>
         </div>
       </div>
 
       <div class="empty-state" *ngIf="services.length === 0">
-        <div class="empty-icon">💆</div>
+        <div class="empty-icon">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#354968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="3" fill="#354968"/>
+          </svg>
+        </div>
         <h3 class="empty-title">No hay servicios registrados</h3>
         <p class="empty-message">Crea tu primer servicio para comenzar</p>
         <button class="btn-create-large" (click)="onCreateService()">
-          ➕ Crear Primer Servicio
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Crear Primer Servicio
         </button>
       </div>
     </section>
