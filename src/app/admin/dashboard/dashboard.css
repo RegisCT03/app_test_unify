@@ -1,12 +1,12 @@
 .dashboard-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #e8eef5 0%, #f5f7fa 100%);
+  background: #f5f7fa;
 }
 
 .dashboard-header {
-  background: linear-gradient(135deg, #a8b8d8 0%, #c5d3e8 100%);
+  background: #354968;
   padding: 2rem 3rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
 .header-content {
@@ -20,7 +20,7 @@
 .dashboard-title {
   font-size: 2rem;
   color: white;
-  font-weight: 700;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -41,19 +41,20 @@
 
 .btn-logout {
   background: white;
-  color: #3b5998;
+  color: #354968;
   border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 25px;
+  padding: 0.6rem 1.8rem;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
+  font-size: 0.95rem;
 }
 
 .btn-logout:hover {
   background: #f0f4ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .dashboard-main {
@@ -71,9 +72,9 @@
 
 .appointments-section {
   background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   margin-bottom: 2rem;
 }
 
@@ -82,31 +83,33 @@
 }
 
 .section-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #2c3e50;
   margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 .section-title .highlight {
-  color: #3b5998;
+  color: #354968;
+  font-weight: 700;
 }
 
 .date-selector {
   background: #f8f9fb;
-  padding: 1rem;
-  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
 }
 
 .current-date {
-  font-size: 1.3rem;
-  color: #3b5998;
+  font-size: 1.2rem;
+  color: #354968;
   font-weight: 700;
   margin-bottom: 0.3rem;
   text-transform: capitalize;
 }
 
 .date-subtitle {
-  color: #666;
+  color: #7f8c9a;
   font-size: 0.9rem;
   margin: 0;
 }
@@ -123,20 +126,21 @@
 }
 
 .btn-view-all {
-  background: #3b5998;
+  background: #354968;
   color: white;
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 25px;
+  padding: 0.9rem 2.5rem;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
+  font-size: 0.95rem;
 }
 
 .btn-view-all:hover {
-  background: #2d4373;
+  background: #2a3a52;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 89, 152, 0.3);
+  box-shadow: 0 4px 12px rgba(53, 73, 104, 0.25);
 }
 
 .quick-actions {
@@ -148,50 +152,53 @@
 
 .action-card {
   background: white;
-  border-radius: 20px;
-  padding: 2rem;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .action-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
 .action-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  display: none;
 }
 
 .action-title {
-  color: #3b5998;
-  font-size: 1.3rem;
+  color: #354968;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .action-description {
-  color: #666;
+  color: #7f8c9a;
   margin-bottom: 1.5rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .btn-action {
-  background: #3b5998;
+  background: #354968;
   color: white;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
+  font-size: 0.95rem;
 }
 
 .btn-action:hover {
-  background: #2d4373;
+  background: #2a3a52;
 }
 
 .promo-section {
@@ -202,12 +209,12 @@
 .promo-image {
   max-width: 600px;
   width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .dashboard-footer {
-  background: #2c3e50;
+  background: #354968;
   color: white;
   text-align: center;
   padding: 2rem;
@@ -215,6 +222,8 @@
 
 .dashboard-footer p {
   margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
