@@ -166,9 +166,15 @@
 }
 
 .action-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: none;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-icon svg {
+  width: 48px;
+  height: 48px;
 }
 
 .action-title {
