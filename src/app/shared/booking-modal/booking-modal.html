@@ -1,16 +1,55 @@
-<div *ngFor="let service of services" 
-     class="service-card" 
-     [class.selected]="selectedService?.id === service.id" 
-     (click)="onServiceSelect(service)">
-  
-  <div class="service-icon">
-    <img [src]="service.icon" [alt]="service.title">
-  </div>
-  <div class="service-content">
-    <h4 class="service-title">{{ service.title }}</h4>
-    <p class="service-description">{{ service.description }}</p>
-  </div>
-  <div class="selection-indicator" *ngIf="selectedService?.id === service.id">
-    <span class="checkmark">✓</span>
+<div class="modal-overlay" (click)="onOverlayClick()">
+  <div class="booking-modal" (click)="onContentClick($event)">
+    <button class="close-icon" (click)="onClose()">✕</button>
+
+    <div class="modal-body">
+      <div class="modal-image">
+        <img src="assets/images/zen-stones.jpg" alt="Imagen masaje">
+      </div>
+
+      <div class="modal-content">
+        <div class="back-row">
+          <button class="back-link" (click)="onClose()">← Regresar</button>
+        </div>
+
+        <div class="modal-header">
+          <p class="small-label">Haz seleccionado:</p>
+          <h2 class="big-date">{{ date | date:'EEEE d \'de\' MMMM \'del\' yyyy':'':'es' }}</h2>
+          <p class="time-label">En el siguiente horario:</p>
+          <h3 class="big-time">{{ timeSlot }}</h3>
+
+          <p class="choose-label">Selecciona un tipo de masaje:</p>
+        </div>
+
+        <div class="services-list">
+          <div class="services-grid">
+            <div *ngFor="let service of services" 
+                 class="service-card" 
+                 [class.selected]="selectedService?.id === service.id" 
+                 (click)="onServiceSelect(service)">
+
+              <div class="service-icon">
+                <img [src]="service.icon" [alt]="service.title">
+              </div>
+              <div class="service-content">
+                <h4 class="service-title">{{ service.title }}</h4>
+                <p class="service-description">{{ service.description }}</p>
+                <p class="service-price">${{ service.price }}</p>
+              </div>
+              <div class="selection-indicator" *ngIf="selectedService?.id === service.id">
+                <span class="checkmark">✓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-row">
+          <div class="payment-note">Todos los pagos se realizaran por medio de: <span class="paypal">PayPal</span></div>
+          <div class="actions-right">
+            <button class="btn-primary" (click)="onProceed()" [disabled]="!selectedService">Realizar Pago</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
