@@ -72,7 +72,8 @@
     [service]="selectedService"
     (confirm)="confirmBooking()"
     (print)="printBooking()"
-    (close)="closeConfirmationModal()">
+    (close)="closeConfirmationModal()"
+    (sendReceipt)="sendReceipt()">
   </app-confirmation-modal>
 
   <app-footer></app-footer>
