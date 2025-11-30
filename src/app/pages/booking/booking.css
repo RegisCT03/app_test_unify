@@ -150,9 +150,10 @@ app-time-slot-selector[selected="true"] {
 }
 
 .promo-image-container {
-  width: 400px; /* Ancho fijo para la imagen */
+  width: 400px; 
   height: 150px;
   position: relative;
+  background-image: url("./../../assets/img3.jpg");
 }
 
 .promo-img {
