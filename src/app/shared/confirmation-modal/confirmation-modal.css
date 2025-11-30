@@ -58,8 +58,8 @@
   width: 100%;
   height: 100%;
   min-height: 380px; /* reducir para evitar scroll vertical */
-  object-fit: cover;
   border-radius: 12px;
+  background-image: url("../../assets/img4.jpg");
 }
 
 .modal-info { display:flex; flex-direction:column; gap:6px }
