@@ -1,6 +1,6 @@
 .services-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #e8eef5 0%, #f5f7fa 100%);
+  background: #f5f7fa;
   padding: 2rem;
 }
 
@@ -11,10 +11,10 @@
 
 .btn-back {
   background: white;
-  color: #3b5998;
-  border: 2px solid #3b5998;
+  color: #354968;
+  border: 2px solid #354968;
   padding: 0.7rem 1.5rem;
-  border-radius: 25px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
@@ -22,7 +22,7 @@
 }
 
 .btn-back:hover {
-  background: #3b5998;
+  background: #354968;
   color: white;
 }
 
@@ -38,27 +38,32 @@
   font-size: 2.5rem;
   color: #2c3e50;
   margin: 0;
+  font-weight: 400;
 }
 
 .highlight {
-  color: #3b5998;
+  color: #354968;
+  font-weight: 700;
 }
 
 .btn-create {
   background: #27ae60;
   color: white;
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 25px;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .btn-create:hover {
   background: #229954;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25);
 }
 
 .services-content {
@@ -76,13 +81,13 @@
 
 .stat-card {
   background: white;
-  border-radius: 15px;
+  border-radius: 8px;
   padding: 1.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  border-left: 4px solid #3b5998;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-left: 4px solid #354968;
 }
 
 .stat-card.active {
@@ -104,12 +109,17 @@
   font-size: 1.5rem;
 }
 
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
 .stat-content {
   flex: 1;
 }
 
 .stat-label {
-  color: #666;
+  color: #7f8c9a;
   font-size: 0.9rem;
   margin: 0 0 0.3rem 0;
 }
@@ -124,9 +134,9 @@
 /* Services List */
 .services-list {
   background: white;
-  border-radius: 15px;
+  border-radius: 8px;
   padding: 2rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
 .list-header {
@@ -141,7 +151,7 @@
 }
 
 .list-subtitle {
-  color: #666;
+  color: #7f8c9a;
   font-size: 1rem;
   margin: 0;
 }
@@ -155,16 +165,16 @@
 /* Service Item */
 .service-item {
   background: white;
-  border: 2px solid #e0e7f1;
-  border-radius: 15px;
+  border: 1px solid #e0e7f1;
+  border-radius: 8px;
   padding: 1.5rem;
   transition: all 0.3s;
 }
 
 .service-item:hover {
-  border-color: #3b5998;
+  border-color: #354968;
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(59, 89, 152, 0.15);
+  box-shadow: 0 6px 16px rgba(53, 73, 104, 0.15);
 }
 
 .service-item.inactive {
@@ -182,7 +192,7 @@
 .service-icon {
   width: 60px;
   height: 60px;
-  background: #3b5998;
+  background: #354968;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -257,7 +267,7 @@
 }
 
 .service-description {
-  color: #666;
+  color: #7f8c9a;
   line-height: 1.6;
   margin: 0 0 1rem 0;
 }
@@ -276,13 +286,13 @@
 }
 
 .detail-label {
-  color: #666;
+  color: #7f8c9a;
   font-size: 0.85rem;
   font-weight: 600;
 }
 
 .detail-value {
-  color: #3b5998;
+  color: #354968;
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -293,18 +303,21 @@
 }
 
 .btn-edit {
-  background: #3b5998;
+  background: #354968;
   color: white;
   border: none;
   padding: 0.7rem 1.5rem;
-  border-radius: 25px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .btn-edit:hover {
-  background: #2d4373;
+  background: #2a3a52;
   transform: translateY(-2px);
 }
 
@@ -317,6 +330,14 @@
 .empty-icon {
   font-size: 4rem;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-icon svg {
+  width: 64px;
+  height: 64px;
 }
 
 .empty-title {
@@ -327,7 +348,7 @@
 }
 
 .empty-message {
-  color: #666;
+  color: #7f8c9a;
   font-size: 1rem;
   margin-bottom: 2rem;
 }
@@ -337,17 +358,20 @@
   color: white;
   border: none;
   padding: 1rem 2rem;
-  border-radius: 25px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .btn-create-large:hover {
   background: #229954;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25);
 }
 
 /* Modal */
@@ -401,6 +425,7 @@
 
   .btn-create {
     width: 100%;
+    justify-content: center;
   }
 
   .stats-section {
