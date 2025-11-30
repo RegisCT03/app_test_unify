@@ -7,12 +7,16 @@
 .page-header {
   max-width: 1400px;
   margin: 0 auto 2rem auto;
+  background: #354968;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .btn-back {
   background: white;
   color: #354968;
-  border: 2px solid #354968;
+  border: none;
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;
@@ -25,19 +29,19 @@
 }
 
 .btn-back:hover {
-  background: #354968;
-  color: white;
+  background: #f0f4ff;
+  transform: translateY(-1px);
 }
 
 .page-title {
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: white;
   margin: 0;
   font-weight: 400;
 }
 
 .highlight {
-  color: #354968;
+  color: white;
   font-weight: 700;
 }
 
@@ -74,7 +78,7 @@
 .search-input:focus {
   outline: none;
   border-color: #354968;
-  box-shadow: 0 0 0 3px rgba(53, 73, 104, 0.1);
+  box-shadow: 0 0 0 3px rgba(53, 73, 104, 0.15);
 }
 
 .search-input::placeholder {
@@ -87,7 +91,7 @@
 }
 
 .btn-export {
-  background: #27ae60;
+  background: #354968;
   color: white;
   border: none;
   padding: 0.9rem 1.8rem;
@@ -101,9 +105,9 @@
 }
 
 .btn-export:hover {
-  background: #229954;
+  background: #2a3a52;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25);
+  box-shadow: 0 4px 12px rgba(53, 73, 104, 0.3);
 }
 
 /* Clients Section */
@@ -119,9 +123,9 @@
 }
 
 .section-title {
-  color: #2c3e50;
+  color: #354968;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -167,7 +171,7 @@
   top: 1rem;
   right: 1rem;
   background: #f5f7fa;
-  color: #2c3e50;
+  color: #354968;
   border: none;
   width: 36px;
   height: 36px;
@@ -183,12 +187,13 @@
 }
 
 .close-button:hover {
-  background: #e0e7f1;
+  background: #354968;
+  color: white;
   transform: rotate(90deg);
 }
 
 .modal-header {
-  background: linear-gradient(135deg, #354968 0%, #4a5f7f 100%);
+  background: #354968;
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -232,10 +237,12 @@
 }
 
 .history-title {
-  color: #2c3e50;
+  color: #354968;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #354968;
 }
 
 /* History List */
@@ -294,7 +301,7 @@
 }
 
 .history-service {
-  color: #2c3e50;
+  color: #354968;
   font-size: 1.1rem;
   font-weight: 700;
   margin: 0 0 0.3rem 0;
@@ -312,7 +319,7 @@
 }
 
 .status-badge {
-  background: #27ae60;
+  background: #354968;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
