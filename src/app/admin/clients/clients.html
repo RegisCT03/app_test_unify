@@ -1,0 +1,99 @@
+<div class="clients-container">
+  <header class="page-header">
+    <button class="btn-back" (click)="backToDashboard()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Volver al Dashboard
+    </button>
+    <h1 class="page-title">Historial de <span class="highlight">Clientes</span></h1>
+  </header>
+
+  <div class="clients-content">
+    <section class="toolbar">
+      <div class="search-box">
+        <input 
+          type="text" 
+          class="search-input" 
+          placeholder="Buscar por nombre, email o teléfono..."
+          (input)="onSearch($event)">
+      </div>
+
+      <div class="toolbar-actions">
+        <button class="btn-export" (click)="exportToExcel()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 10L12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Exportar a Excel
+        </button>
+      </div>
+    </section>
+
+    <section class="clients-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          {{ filteredClients.length }} 
+          {{ filteredClients.length === 1 ? 'cliente encontrado' : 'clientes encontrados' }}
+        </h2>
+      </div>
+
+      <app-client-list
+        [clients]="filteredClients"
+        [loading]="loading"
+        (clientSelected)="onClientSelected($event)"
+        (viewHistory)="onViewHistory($event)">
+      </app-client-list>
+    </section>
+  </div>
+
+  <div class="modal-overlay" *ngIf="showHistory" (click)="closeHistory()">
+    <div class="history-modal" (click)="$event.stopPropagation()">
+      <button class="close-button" (click)="closeHistory()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="client-avatar-large">
+          {{ selectedClient?.name?.charAt(0)?.toUpperCase() }}
+        </div>
+        <div class="client-details">
+          <h2 class="client-name">{{ selectedClient?.name }}</h2>
+          <p class="client-email">{{ selectedClient?.email }}</p>
+          <p class="client-phone">{{ selectedClient?.phone }}</p>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <h3 class="history-title">Historial de Citas</h3>
+        
+        <div class="history-list" *ngIf="clientHistory.length > 0">
+          <div class="history-item" *ngFor="let appointment of clientHistory">
+            <div class="history-date">
+              <span class="date-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="4" width="18" height="18" rx="2" stroke="#354968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 2V6M8 2V6M3 10H21" stroke="#354968" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="date-text">{{ appointment.date | date:'d MMM yyyy':'':'es' }}</span>
+            </div>
+            <div class="history-details">
+              <h4 class="history-service">{{ appointment.service }}</h4>
+              <p class="history-time">{{ appointment.time }}</p>
+            </div>
+            <div class="history-status completed">
+              <span class="status-badge">Completada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="empty-history" *ngIf="clientHistory.length === 0">
+          <p>No hay historial de citas para este cliente</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="home-container">
+
+  <app-header></app-header>
+
+  <app-hero-section></app-hero-section>
+
+  <section class="relaxation-section">
+    <div class="relaxation-content">
+      <p class="relaxation-text">
+        Este espacio está dedicado a ofrecer la máxima relajación posible, ven y tómate un descanso de la vida cotidiana.
+      </p>
+      <button class="btn-schedule">Agenda tu cita</button>
+    </div>
+  </section>
+
+  <section class="therapist-section">
+    <div class="therapist-image">
+      <img src="/src/app/assets/img1.jpg" alt="Terapeuta">
+    </div>
+  </section>
+
+  <section class="techniques-section">
+    <h2 class="section-title">
+      Nuestras <span class="highlight">técnicas</span> de masaje
+    </h2>
+    
+    <div class="techniques-grid">
+      <app-technique-card 
+        *ngFor="let technique of techniques"
+        [icon]="technique.icon"
+        [title]="technique.title"
+        [description]="technique.description">
+      </app-technique-card>
+    </div>
+
+    <div class="techniques-image">
+      <img src="/src/app/assets/img2.jpg" alt="Mesa de Masajes">
+    </div>
+  </section>
+
+  <section class="benefits-section">
+    <app-benefit-card
+      *ngFor="let benefit of benefits"
+      [image]="benefit.image"
+      [title]="benefit.title"
+      [description]="benefit.description"
+      [reverse]="benefit.reverse ?? false">
+    </app-benefit-card>
+  </section>
+
+  <app-footer></app-footer>
+</div>

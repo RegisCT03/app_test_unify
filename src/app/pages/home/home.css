@@ -1,0 +1,101 @@
+.home-container {
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+}
+
+.relaxation-section {
+  background: white;
+  padding: 3rem;
+  text-align: center;
+}
+
+.relaxation-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.relaxation-text {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.btn-schedule {
+  background: #3b5998;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.btn-schedule:hover {
+  background: #2d4373;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.therapist-section {
+  padding: 3rem;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.therapist-image img {
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.techniques-section {
+  padding: 4rem 3rem;
+  background: white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  color: #3b5998;
+  font-weight: 700;
+}
+
+.techniques-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.techniques-image {
+  text-align: center;
+}
+
+.techniques-image img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.benefits-section {
+  padding: 4rem 3rem;
+  background: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  .techniques-grid {
+    grid-template-columns: 1fr;
+  }
+}

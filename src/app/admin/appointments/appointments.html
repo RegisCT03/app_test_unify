@@ -1,0 +1,76 @@
+<div class="appointments-container">
+  <header class="page-header">
+    <button class="btn-back" (click)="backToDashboard()">← Volver al Dashboard</button>
+    <h1 class="page-title">Gestión de <span class="highlight">Citas</span></h1>
+  </header>
+
+  <div class="appointments-content">
+    <section class="filters-section">
+      <div class="search-box">
+        <input 
+          type="text" 
+          class="search-input" 
+          placeholder="Buscar por nombre o servicio..."
+          (input)="onSearch($event)">
+      </div>
+
+      <div class="status-filters">
+        <button 
+          class="filter-btn" 
+          [class.active]="filterStatus === 'all'"
+          (click)="filterByStatus('all')">
+          Todas ({{ getStatusCount('all') }})
+        </button>
+        <button 
+          class="filter-btn" 
+          [class.active]="filterStatus === 'pending'"
+          (click)="filterByStatus('pending')">
+          Pendientes ({{ getStatusCount('pending') }})
+        </button>
+        <button 
+          class="filter-btn" 
+          [class.active]="filterStatus === 'confirmed'"
+          (click)="filterByStatus('confirmed')">
+          Confirmadas ({{ getStatusCount('confirmed') }})
+        </button>
+        <button 
+          class="filter-btn" 
+          [class.active]="filterStatus === 'completed'"
+          (click)="filterByStatus('completed')">
+          Completadas ({{ getStatusCount('completed') }})
+        </button>
+      </div>
+    </section>
+
+    <section class="appointments-list">
+      <div class="list-header">
+        <h2 class="list-title">
+          {{ filteredAppointments.length }} 
+          {{ filteredAppointments.length === 1 ? 'cita encontrada' : 'citas encontradas' }}
+        </h2>
+      </div>
+
+      <div class="appointments-grid" *ngIf="filteredAppointments.length > 0">
+        <app-appointment-card
+          *ngFor="let appointment of filteredAppointments"
+          [appointment]="appointment"
+          (viewDetails)="viewDetails($event)">
+        </app-appointment-card>
+      </div>
+
+      <div class="empty-state" *ngIf="filteredAppointments.length === 0">
+        <div class="empty-icon">📅</div>
+        <h3 class="empty-title">No se encontraron citas</h3>
+        <p class="empty-message">Intenta ajustar los filtros de búsqueda</p>
+      </div>
+    </section>
+  </div>
+
+  <app-appointment-modal
+    *ngIf="showModal && selectedAppointment"
+    [appointment]="selectedAppointment"
+    (close)="closeModal()"
+    (statusChange)="onStatusChange($event)"
+    (cancel)="onCancelAppointment($event)">
+  </app-appointment-modal>
+</div>
