@@ -6,7 +6,7 @@ import { BookingModalComponent } from '../../shared/booking-modal/booking-modal'
 import { TimeSlotSelectorComponent } from '../../shared/time-slot-selector/time-slot-selector';
 import { HeaderComponent } from '../../shared/header/header';
 
-// Interfaz actualizada para incluir el PRECIO
+
 export interface TimeSlot {
   id: string;
   time: string;
@@ -18,7 +18,7 @@ export interface Service {
   icon: string;
   title: string;
   description: string;
-  price: number; // <--- CAMBIO IMPORTANTE: Agregado para coincidir con el diseño visual
+  price: number; 
 }
 
 @Component({
@@ -33,7 +33,7 @@ export interface Service {
     ConfirmationModalComponent, 
     HeaderComponent
   ],
-  templateUrl: './booking.html', // Asegúrate de que coincida con tu nombre de archivo real
+  templateUrl: './booking.html', 
   styleUrls: ['./booking.css']
 })
 export class BookingComponent implements OnInit {
@@ -59,18 +59,18 @@ export class BookingComponent implements OnInit {
     { id: '8', time: '7:00pm - 8:00pm', available: true }
   ];
 
-  // Lista de servicios actualizada con PRECIOS
+  
   services: Service[] = [
     {
       id: 'deportivo',
-      icon: 'assets/icons/sport.svg',
+      icon: 'assets/icons/deportivo.svg',
       title: 'Masaje Deportivo',
       description: 'Libera tensión profunda, mejora flexibilidad y previene lesiones. Ideal para atletas y personas activas.',
       price: 50
     },
     {
       id: 'terapeutico',
-      icon: 'assets/icons/therapeutic.svg',
+      icon: 'assets/icons/terapeutico.svg',
       title: 'Masaje Terapéutico',
       description: 'Alivia dolores específicos y acelera la recuperación de lesiones. Técnicas personalizadas.',
       price: 55
