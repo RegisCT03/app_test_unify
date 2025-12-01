@@ -54,13 +54,13 @@ export class HomeComponent {
 
   benefits: Benefit[] = [
     {
-      image: 'assets/images/relaxing-massage.jpg',
+      image: 'assets/img2.jpg',
       title: 'Tu Camino Personalizado al Alivio',
       description: 'Este video te lleva detrás de cámaras de nuestra evaluación inicial. Verás cómo realizamos un análisis postural y palpatorio para identificar puntos de tensión y diseñar el plan de tratamiento perfecto, adaptado 100% a tu cuerpo y necesidades.',
       reverse: false
     },
     {
-      image: 'assets/images/sport-massage.jpg',
+      image: 'assets/img3.jpg',
       title: 'Rendimiento y Recuperación',
       description: 'Este video te muestra cómo nuestro masaje deportivo trabaja las capas profundas de los músculos. Verás técnicas enfocadas en liberar la tensión, aumentar la flexibilidad y preparar tu cuerpo para un óptimo rendimiento, acelerando también la recuperación post-esfuerzo.',
       reverse: true
