@@ -63,28 +63,28 @@ export class BookingComponent implements OnInit {
   services: Service[] = [
     {
       id: 'deportivo',
-      icon: 'assets/icons/deportivo.svg',
+      icon: '../../../assets/icons/sports.svg',
       title: 'Masaje Deportivo',
       description: 'Libera tensión profunda, mejora flexibilidad y previene lesiones. Ideal para atletas y personas activas.',
       price: 50
     },
     {
       id: 'terapeutico',
-      icon: 'assets/icons/terapeutico.svg',
+      icon: '../../../assets/icons/therapeutic.svg',
       title: 'Masaje Terapéutico',
       description: 'Alivia dolores específicos y acelera la recuperación de lesiones. Técnicas personalizadas.',
       price: 55
     },
     {
       id: 'revision',
-      icon: 'assets/icons/revision.svg',
+      icon: '../../../assets/icons/revision.svg',
       title: 'Masaje de Revisión',
       description: 'Evalúa tu condición muscular para crear un plan de tratamiento personalizado.',
       price: 45
     },
     {
       id: 'linfatico',
-      icon: 'assets/icons/lymphatic.svg',
+      icon: '../../../assets/icons/linfatic.svg',
       title: 'Masaje Linfático',
       description: 'Estimula el sistema inmunológico, reduce hinchazón y promueve la eliminación de toxinas.',
       price: 60
