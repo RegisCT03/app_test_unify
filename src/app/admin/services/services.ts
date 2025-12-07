@@ -44,7 +44,7 @@ export class ServicesComponent implements OnInit {
         description: 'Ideal para atletas y personas activas. Libera la tensión muscular profunda, previene lesiones y acelera la recuperación.',
         duration: 60,
         price: 500,
-        icon: 'assets/icons/sport.svg',
+        icon: 'assets/icons/sports.svg',
         active: true
       },
       {
@@ -71,7 +71,7 @@ export class ServicesComponent implements OnInit {
         description: 'Una técnica suave que estimula la circulación linfática. Perfecto para reducir hinchazón.',
         duration: 60,
         price: 600,
-        icon: 'assets/icons/lymphatic.svg',
+        icon: 'assets/icons/linfatic.svg',
         active: false
       }
     ];

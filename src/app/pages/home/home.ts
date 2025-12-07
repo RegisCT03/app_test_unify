@@ -5,6 +5,7 @@ import { HeaderComponent } from '../../shared/header/header';
 import { HeroSectionComponent } from '../../shared/hero-section/hero-section';
 import { TechniqueCardComponent } from '../../shared/technique-card/technique-card';    
 import { FooterComponent } from '../../shared/footer/footer'; 
+import { RouterLink } from '@angular/router';
 
 interface Technique {
   icon: string;
@@ -22,7 +23,7 @@ interface Benefit {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, BenefitCardComponent, HeaderComponent, HeroSectionComponent, TechniqueCardComponent, FooterComponent],
+  imports: [CommonModule, BenefitCardComponent, HeaderComponent, HeroSectionComponent, TechniqueCardComponent, FooterComponent, RouterLink],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })

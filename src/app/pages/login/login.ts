@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthLayoutComponent } from '../../shared/auth-layout/auth-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../../core/services/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +18,8 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -27,13 +29,14 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      console.log('Formulario válido:', this.loginForm.value);
-      // Aquí iría la lógica de autenticación (API call)
-      alert('Inicio de sesión exitoso');
-      this.router.navigate(['/']);
+      const email = this.loginForm.value.email;
+      const password = this.loginForm.value.password;
+
+      if (!this.authService.login(email, password)) {
+        alert('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
+      }
     } else {
       this.markFormGroupTouched(this.loginForm);
-      alert('Por favor, completa todos los campos correctamente');
     }
   }
 
