@@ -29,29 +29,28 @@ interface Benefit {
 export class HomeComponent {
   
   techniques: Technique[] = [
-    {
-      icon: 'assets/images/icons/sport.svg', 
+   {
+      icon: '../../../assets/icons/sports.svg',
       title: 'Masaje Deportivo',
-      description: 'Ideal para atletas y personas activas. Libera la tensión muscular profunda, previene lesiones y acelera la recuperación.'
+      description: 'Libera tensión profunda, mejora flexibilidad y previene lesiones. Ideal para atletas y personas activas.',
     },
     {
-      icon: 'assets/images/icons/therapeutic.svg',
+      icon: '../../../assets/icons/therapeutic.svg',
       title: 'Masaje Terapéutico',
-      description: 'Enfocado en aliviar dolores específicos y mejorar lesiones. Trabajamos sobre las zonas de malestar para disminuir el sufrimiento.'
+      description: 'Alivia dolores específicos y acelera la recuperación de lesiones. Técnicas personalizadas.',
     },
     {
-      icon: 'assets/images/icons/revision.svg',
+      icon: '../../../assets/icons/revision.svg',
       title: 'Masaje de Revisión',
-      description: 'Una evaluación completa de tu estado muscular y postural. Identificamos desequilibrios y tensiones.'
+      description: 'Evalúa tu condición muscular para crear un plan de tratamiento personalizado.',
     },
     {
-      icon: 'assets/images/icons/lymphatic.svg',
+      icon: '../../../assets/icons/linfatic.svg',
       title: 'Masaje Linfático',
-      description: 'Una técnica suave que estimula la circulación linfática. Perfecto para reducir hinchazón y eliminar toxinas.'
+      description: 'Estimula el sistema inmunológico, reduce hinchazón y promueve la eliminación de toxinas.',
     }
   ];
 
-  // ✅ Rutas correctas apuntando a la nueva ubicación
   benefits: Benefit[] = [
     {
       image: 'assets/images/promo1.jpeg',
