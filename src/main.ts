@@ -1,7 +1,19 @@
-import { platformBrowser } from '@angular/platform-browser';
-import { AppModule } from './app/app-module';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { routes } from './app.routes'; 
+import { provideBrowserGlobalErrorListeners } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
 
-platformBrowser().bootstrapModule(AppModule, {
-  ngZoneEventCoalescing: true,
-})
-  .catch(err => console.error(err));
+
+registerLocaleData(localeEs);
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes),
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient()
+  ]
+}).catch(err => console.error(err));

@@ -1,0 +1,78 @@
+.service-card {
+  background: white;
+  border: 2px solid #e0e7f1;
+  border-radius: 15px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.service-card:hover {
+  border-color: #3b5998;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 89, 152, 0.15);
+}
+
+.service-card.selected {
+  border-color: #3b5998;
+  background: #f0f4ff;
+  box-shadow: 0 6px 20px rgba(59, 89, 152, 0.2);
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+  background: #3b5998;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.service-icon img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.service-content {
+  flex: 1;
+}
+
+.service-title {
+  color: #3b5998;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.service-description {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.selection-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  background: #3b5998;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkmark {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

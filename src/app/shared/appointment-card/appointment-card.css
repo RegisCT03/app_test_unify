@@ -1,0 +1,91 @@
+.appointment-card {
+  background: white;
+  border: 2px solid #e0e7f1;
+  border-radius: 15px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.appointment-card:hover {
+  border-color: #3b5998;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(59, 89, 152, 0.15);
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+  background: #f0f4ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.status-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.appointment-body {
+  margin-bottom: 1rem;
+}
+
+.client-name {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+}
+
+.service-name {
+  color: #3b5998;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.8rem 0;
+}
+
+.appointment-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.time-icon {
+  font-size: 1.2rem;
+}
+
+.appointment-footer {
+  border-top: 1px solid #e0e7f1;
+  padding-top: 1rem;
+}
+
+.btn-details {
+  width: 100%;
+  background: #3b5998;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-details:hover {
+  background: #2d4373;
+}

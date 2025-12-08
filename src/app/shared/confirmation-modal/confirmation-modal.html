@@ -1,0 +1,41 @@
+<div class="modal-overlay" (click)="onClose()">
+  <div class="confirmation-modal" (click)="$event.stopPropagation()">
+    <button class="close-icon" (click)="onClose()">✕</button>
+
+    <div class="modal-header">
+      <div class="modal-image">
+        <img src="../../../assets/images/img4.jpg" alt="Confirmación">
+      </div>
+      
+      <div class="modal-info">
+        <p class="confirmation-label">Recibo de tu operación</p>
+        <p class="confirmation-note">La fecha y hora de 24 hrs para el día:</p>
+        <h2 class="confirmation-date">{{ date | date:'EEEE d \'de\' MMMM \'del\' yyyy':'':'es' }}</h2>
+        <p class="confirmation-time-label">En el horario de:</p>
+        <h3 class="confirmation-time">{{ timeSlot }}</h3>
+        <p class="confirmation-instruction">Elegiste el siguiente masaje:</p>
+        
+        <div class="service-selected" *ngIf="service">
+          <div class="service-icon">
+            <img [src]="service.icon" [alt]="service.title">
+          </div>
+          <div class="service-info">
+            <h4 class="service-title">{{ service.title }}</h4>
+          </div>
+        </div>
+
+        <div class="location-info">
+          <p class="location-label">La ubicación es la siguiente:</p>
+          <div class="location-map">
+            <img src="../../../assets/images/ubicacion.png" alt="Mapa de ubicación">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-secondary" (click)="onPrint()">Imprimir</button>
+      <button class="btn-primary" (click)="onConfirm()">Continuar</button>
+    </div>
+  </div>
+</div>

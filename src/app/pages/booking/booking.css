@@ -1,0 +1,171 @@
+/* Importar fuente sugerida si no la tienes globalmente */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F4F6F8; /* Fondo gris muy suave texturizado */
+  min-height: 100vh;
+}
+
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- HERO SECTION --- */
+.booking-hero {
+  /* Degradado azul suave similar a la imagen */
+  background: linear-gradient(90deg, #9FAACA 0%, #C3CBD6 100%);
+  padding: 40px 20px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  min-height: 120px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0;
+}
+
+.hero-title .highlight {
+  font-weight: 700; /* "momento relajante" en negrita */
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  color: #2B3B55; /* Azul oscuro */
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.section-title .highlight {
+  font-weight: 700;
+}
+
+/* --- FECHA --- */
+.date-title {
+  color: #2B3B55;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+.date-title .day-name {
+  font-weight: 800; /* Lunes más grueso */
+  margin-right: 5px;
+}
+
+/* --- GRID DE HORARIOS --- */
+.time-period {
+  margin-bottom: 40px;
+}
+
+.period-title {
+  color: #2B3B55;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.slots-grid {
+  display: grid;
+  /* Crea columnas automáticas de mínimo 220px */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Estilos para el componente hijo app-time-slot-selector desde el padre.
+   Nota: Esto asume que el componente hijo renderiza un botón o div limpio. */
+app-time-slot-selector {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #2B3B55;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+app-time-slot-selector:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Puedes usar ::ng-deep si necesitas forzar estilos dentro del componente hijo, 
+   o usar @Input 'selected' para cambiar una clase dentro del hijo */
+app-time-slot-selector[selected="true"] {
+  background-color: #2B3B55;
+  color: white;
+  box-shadow: 0 5px 15px rgba(43, 59, 85, 0.3);
+}
+
+.booking-note {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Espacio entre el texto y la imagen */
+  margin-top: 50px;
+  border-radius: 12px;
+  background-color: #F8F9FA;
+  padding: 30px;
+  border-left: 5px solid #2B3B55;
+}
+
+.note-content {
+  flex: 1; /* Permite que el contenido de texto ocupe el espacio disponible */
+}
+
+.note-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.note-text {
+  color: #556575;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.promo-image {
+  max-width: 200px; /* O el tamaño que prefieras para la imagen */
+}
+
+.promo-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .booking-note {
+    flex-direction: column;
+    align-items: flex-start;
+  }  
+  
+  .booking-hero {
+    margin: 10px;
+    padding: 20px;
+  }
+}

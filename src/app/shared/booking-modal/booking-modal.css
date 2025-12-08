@@ -1,0 +1,414 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Clase usada en template */
+ .booking-modal {
+   background: #ffffff !important;
+   border-radius: 18px;
+   max-width: 1100px; 
+   width: 95%;
+   max-height: 120vh; /* limitar altura para evitar scroll de ventana */
+   overflow: hidden; /* ocultar scroll; ajustamos tamaños internos para que quepa */
+   box-shadow: none;
+   position: relative;
+   z-index: 1300;
+   padding: 0.75rem 1rem 1rem 1rem; /* espacio interior reducido para evitar scroll */
+
+   display: flex;
+   flex-direction: column;
+ }
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  padding: 1.5rem;
+  font-size: 1rem;
+  color: #3b5998;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: #2d4373;
+}
+
+.close-button span {
+  font-size: 1.5rem;
+}
+
+ .modal-body {
+   display: grid;
+   grid-template-columns: 360px 1fr; /* imagen izquierda, contenidos a la derecha */
+   gap: 1rem;
+   padding: 0;
+   align-items: stretch; /* permitir que la columna derecha ocupe toda la altura */
+   background: transparent; /* modal ya tiene fondo */
+   color: #0b2a44; /* texto por defecto en azul oscuro */
+   height: 100%;
+ }
+/* Botón de cierre usado en template */
+.close-icon {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: white;
+  border: 2px solid #e9eef8;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #666;
+  z-index: 20;
+}
+
+.close-icon:hover {
+  background: #fafafa;
+  border-color: #3b5998;
+  color: #3b5998;
+}
+
+.modal-image {
+  position: relative;
+}
+ .modal-image img {
+   width: 100%;
+   height: 100%;
+   min-height: 300px;
+   object-fit: cover;
+   border-radius: 12px;
+ }
+
+
+.modal-content { background: #ffffff !important; }
+
+/* Hacer que el contenido derecho sea un contenedor flex-column
+   para poder fijar el payment-row y hacer scroll sólo en la lista */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 6px 0 6px 0;
+}
+
+.back-row { margin-bottom: 8px }
+.back-link { background: transparent; border: none; color: #153b66; font-weight:700; cursor:pointer; padding:0; margin:0 0 6px 0 }
+.back-link:hover { text-decoration: underline }
+
+.small-label {
+  margin: 0;
+  color: #4b6b95; /* azul más suave */
+  font-size: 0.95rem;
+}
+
+.big-date {
+  margin: 6px 0 6px 0;
+  color: #0b3a66; /* azul */
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.time-label {
+  margin: 0;
+  color: #4b6b95;
+  font-size: 0.95rem;
+}
+
+.big-time {
+  margin: 6px 0 14px 0;
+  color: #0b3a66;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.choose-label {
+  margin: 10px 0 12px 0;
+  color: #0b3a66;
+  font-weight: 700;
+}
+
+.modal-label {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-date {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.modal-subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.modal-time {
+  color: #3b5998;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.modal-instruction {
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+ .services-list {
+   margin-bottom: 0.5rem;
+   /* permitir que esta área crezca y sea scrollable dentro del modal */
+   flex: 1 1 auto;
+   min-height: 0; /* importante para que flexbox permita el scroll */
+   overflow: auto;
+   padding-right: 6px; /* dejar espacio para el scrollbar */
+ }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; /* reducir gap para ahorrar espacio */
+}
+
+.service-card {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 0.85rem;
+  border-radius: 10px;
+  background: #ffffff !important;
+  border: 1px solid #eef2f7;
+  cursor: pointer;
+  transition: border-color 0.12s ease;
+  min-height: 110px; /* menor altura para que quepa todo */
+  color: #0b2a44; /* texto azul oscuro */
+}
+
+.service-card:hover {
+  transform: none; /* sin efecto de elevación */
+  box-shadow: none;
+}
+
+.service-card.selected,
+.service-card.selected:hover {
+  background: #ffffff; /* mantener al mismo nivel plano */
+  border-color: #dbe9ff;
+  box-shadow: none;
+}
+
+.service-icon img {
+  width: 42px;
+  height: 42px;
+}
+
+/* Asegurar opacidad normal dentro del modal */
+.booking-modal {
+  opacity: 1 !important;
+}
+
+.service-content .service-title {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  color: #0b3a66; /* azul para títulos */
+}
+
+.service-description {
+  margin: 0 0 6px 0;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.16;
+}
+
+.service-price {
+  margin: 0;
+  font-weight: 700;
+  color: #0b3a66;
+}
+
+.selection-indicator {
+  margin-left: auto;
+  font-size: 1.1rem;
+  color: #3b5998;
+}
+
+/* Botón azul cuando está habilitado */
+.btn-primary:not(:disabled) {
+  background: linear-gradient(180deg,#153b66,#0b3a66);
+  color: #ffffff;
+}
+
+/* Forzar fondo blanco del modal (los hijos pueden tener sus propios fondos) */
+.booking-modal {
+  background-color: #ffffff !important;
+}
+
+.payment-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid #eef2f7;
+}
+
+.payment-note {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.paypal {
+  background: #f3f7ff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-left: 8px;
+  font-weight: 700;
+  color: #153b66;
+}
+
+.actions-right {
+  min-width: 180px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.payment-info {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.payment-text {
+  margin: 0;
+  color: #555;
+}
+
+.payment-text strong {
+  color: #3b5998;
+  font-weight: 700;
+}
+
+.btn-proceed {
+  background: #3b5998;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+/* Botones usados en template */
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 0 0 0;
+}
+
+.btn-primary, .btn-secondary {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #cfd8e6; /* gris claro cuando está deshabilitado por defecto */
+  color: #6b7280;
+}
+
+.btn-primary:disabled {
+  background: #e6e9ef;
+  color: #9aa3b3;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: white;
+  border: 2px solid #dbe9ff;
+  color: #3b5998;
+}
+
+.btn-proceed:hover:not(:disabled) {
+  background: #2d4373;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-proceed:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-image {
+    position: relative;
+  }
+
+  .modal-date {
+    font-size: 1.4rem;
+  }
+
+  .modal-time {
+    font-size: 1.1rem;
+  }
+}
