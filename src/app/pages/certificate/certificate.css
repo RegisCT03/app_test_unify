@@ -1,0 +1,25 @@
+.certificate-page{
+	padding:12px 16px;
+	font-family: 'Montserrat', sans-serif;
+	color:#222;
+	min-height:100vh;
+	box-sizing:border-box;
+}
+.certificate-wrapper{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	/* ocupar espacio disponible menos encabezado/espacios */
+	height: calc(100vh - 120px);
+	margin:12px 0;
+}
+.certificate-img{
+	max-width:95%;
+	max-height:100%;
+	width:auto;
+	height:auto;
+	border:1px solid #ddd;
+	box-shadow:0 2px 6px rgba(0,0,0,0.08);
+	object-fit:contain;
+}
+.note{ color:#666; font-size:0.9rem; text-align:center }
