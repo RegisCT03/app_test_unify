@@ -56,19 +56,19 @@ export class HomeComponent {
     {
       image: 'assets/images/promo1.jpeg',
       title: 'Tu Camino Personalizado al Alivio',
-      description: 'Este video te lleva detrás de cámaras de nuestra evaluación inicial. Verás cómo realizamos un análisis postural y palpatorio.',
+      description: 'Se realizan evaluaciones para poder identificar las lesiones y tensionesmusculares específicas en cada paciente',
       reverse: false
     },
     {
       image: 'assets/images/promo2.jpeg',
       title: 'Rendimiento y Recuperación',
-      description: 'Este video te muestra cómo nuestro masaje deportivo trabaja las capas profundas de los músculos.',
+      description: 'Te ayudamos a que tu recuperación sea más rápida, y aliviamos la tensión de los músculos provocada por el ejercicio.',
       reverse: true
     },
     {
       image: 'assets/images/promo5.jpeg',
       title: 'Suavidad y Bienestar Interior',
-      description: 'Adéntrate en la experiencia del drenaje linfático. En este video explicamos los movimientos suaves, rítmicos y precisos.',
+      description: 'Si tuviste alguna operación recientemente, también te ayudamos a aliviar los dolores musculares que esta pudo haber provocado, ayudando a una recuperacoón mas placenteraa',
       reverse: false
     }
   ];
