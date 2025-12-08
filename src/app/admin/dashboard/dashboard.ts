@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { StatsCardComponent } from '../../shared/stats-card/stats-card';
-import { AppointmentCardComponent } from '../../shared/appointment-card/appointment-card.js';
+import { AppointmentCardComponent } from '../../shared/appointment-card/appointment-card';
 import { Router } from '@angular/router';
 
 interface Appointment {

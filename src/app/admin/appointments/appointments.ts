@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppointmentCardComponent } from '../../shared/appointment-card/appointment-card.js';
+import { AppointmentCardComponent } from '../../shared/appointment-card/appointment-card';
 import { AppointmentModalComponent } from '../../shared/appointment-modal/appointment-modal';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
