@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth';
 
 @Injectable({
@@ -18,13 +17,11 @@ export class AdminGuard implements CanActivate {
     state: RouterStateSnapshot): boolean | UrlTree {
 
     if (this.authService.isLoggedIn() && this.authService.hasRole('admin')) {
-      // Si el usuario está logueado y es administrador, permite el acceso.
-      return true;
+            return true;
     }
-
-    // Si no cumple las condiciones, redirige a la página de login.
+    // Si no cumple las condiciones, crea un UrlTree para redirigir a /login.
+    // Esta es la forma recomendada de manejar redirecciones en guardas.
     console.warn('Acceso denegado: Se requiere rol de administrador.');
-    this.router.navigate(['/login']); // O a una página de 'acceso-denegado'
-    return false;
+    return this.router.createUrlTree(['/login']);
   }
 }
