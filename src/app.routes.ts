@@ -10,12 +10,10 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'booking', component: BookingComponent },
-  
   {
     path: 'admin',
     canActivate: [AdminGuard],
-    loadChildren: () => import('./app/admin/admin.routes').then(m => m.ADMIN_ROUTES),
+    loadChildren: () => import('./app/admin/admin.routes').then(m => m.ADMIN_ROUTES)
   },
- 
   { path: '**', redirectTo: '' }
 ];
