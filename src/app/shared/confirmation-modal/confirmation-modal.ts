@@ -18,7 +18,7 @@ export interface Service {
   styleUrls: ['./confirmation-modal.css']   
 })
 export class ConfirmationModalComponent {
-  @Input() date: Date = new Date(); // Inicialización segura
+  @Input() date: Date = new Date(); 
   @Input() timeSlot: string = '';
   @Input() service: Service | null = null;
   
@@ -43,14 +43,11 @@ export class ConfirmationModalComponent {
     this.close.emit();
   }
 
-  // --- Lógica de Overlay (Igual que en BookingModal) ---
-
-  // Cierra el modal si se hace click en el fondo oscuro
+ 
   onOverlayClick(): void {
     this.close.emit();
   }
 
-  // Evita que el click dentro del contenido cierre el modal
   onContentClick(event: Event): void {
     event.stopPropagation();
   }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { AuthService } from '../services/auth';
+import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class AdminGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean | UrlTree {
 
-    if (this.authService.isLoggedIn() && this.authService.hasRole('admin')) {
+    if (this.authService.isLoggedIn() && this.authService.isAdmin()) {
             return true;
     }
     // Si no cumple las condiciones, crea un UrlTree para redirigir a /login.
