@@ -1,4 +1,4 @@
-name: Tournify - Deploy to S3
+name: testing - Deploy to S3
 
 on:
     push:
@@ -16,7 +16,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Setup node
-              uses: actions/setup-node@v6
+              uses: actions/setup-node@v4
               with: 
                 node-version: '22'
                 cache: npm
