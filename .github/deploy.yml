@@ -1,11 +1,12 @@
-# ARCHIVO DE PRUEBA PARA UN FLUJO DE TRABAJO EN GITHUB
-name: archivo de deploy para bucket s3 con angular
+name: Tournify - Deploy to S3
 
 on:
     push:
         branches:
             - main
             - develop
+
+           
 
 jobs:
     deploy:
@@ -19,6 +20,9 @@ jobs:
               with: 
                 node-version: '22'
                 cache: npm
+
+            - name: CHECK PATH
+              run: pwd
 
             - name: Install dependencies
               run: npm ci
@@ -38,4 +42,4 @@ jobs:
                 aws-region: us-east-1
 
             - name: Deploy to S3
-              run: aws s3 sync dist/testing/browser s3://amzn-front --delete --exclude ".*"
+              run: aws s3 sync dist/testing s3://amzn-front --delete --exclude ".*"
