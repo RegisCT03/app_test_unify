@@ -1,10 +1,20 @@
 <app-auth-layout title="Regístrate">
 
+  <!-- Mensaje de éxito -->
+  <div *ngIf="success" class="alert alert-success">
+    ✓ ¡Registro exitoso! Redirigiendo a inicio de sesión...
+  </div>
+
+  <!-- Mensaje de error -->
+  <div *ngIf="error" class="alert alert-error">
+    {{ error }}
+  </div>
+
   <form [formGroup]="registerForm"
         (ngSubmit)="onSubmit()"
-        class="register-form-content">
+        class="register-form-content"
+        [hidden]="success">
 
-    <!-- Nombre y Apellidos -->
     <div class="form-row">
       <div class="form-group">
         <label for="firstName" class="form-label">Nombre (s)</label>

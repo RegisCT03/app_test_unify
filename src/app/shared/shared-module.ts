@@ -22,21 +22,22 @@ import { StatsCardComponent } from './stats-card/stats-card';
   imports: [
     CommonModule,
     RouterModule,
+    // Re-export standalone components by importing them here
     AuthLayoutComponent,
     HeaderComponent,
     FooterComponent,
     HeroSectionComponent,
     TechniqueCardComponent,
+    BenefitCardComponent,
+    TimeSlotSelectorComponent,
     ServiceCardComponent,
     BookingModalComponent,
     ConfirmationModalComponent,
-    TimeSlotSelectorComponent,
-    BenefitCardComponent, 
+    AppointmentCardComponent,
     AppointmentModalComponent,
     ClientListComponent,
     ServiceEditorComponent,
-    StatsCardComponent,
-    AppointmentCardComponent
+    StatsCardComponent
   ],
   exports: [
     AuthLayoutComponent,
@@ -44,7 +45,9 @@ import { StatsCardComponent } from './stats-card/stats-card';
     FooterComponent,
     HeroSectionComponent,
     TechniqueCardComponent,
-    BenefitCardComponent
+    BenefitCardComponent,
+    BookingModalComponent,
+    ConfirmationModalComponent
   ],
 })
 export class SharedModule { }
