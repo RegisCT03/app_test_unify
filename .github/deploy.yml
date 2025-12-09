@@ -38,4 +38,4 @@ jobs:
                 aws-region: us-east-1
 
             - name: Deploy to S3
-              run: aws s3 sync dist/testing/browser s3://amzn-bucket-static-musap01  --delete --exclude ".*"
+              run: aws s3 sync dist/testing/browser s3://amzn-front --delete --exclude ".*"
