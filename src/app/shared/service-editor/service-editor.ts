@@ -1,17 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
-
-interface Service {
-  id?: string;
-  title: string;
-  description: string;
-  duration: number;
-  price: number;
-  icon: string;
-  active: boolean;
-}
+import { Service } from '../../core/services/services.service';
 
 @Component({
   selector: 'app-service-editor',
@@ -51,14 +41,19 @@ export class ServiceEditorComponent implements OnInit {
       description: ['', [Validators.required, Validators.minLength(10)]],
       duration: [60, [Validators.required, Validators.min(15)]],
       price: [0, [Validators.required, Validators.min(0)]],
-      icon: ['assets/icons/sport.svg', Validators.required],
-      active: [true]
+      icon: ['assets/icons/sport.svg', Validators.required]
     });
   }
 
   loadServiceData(): void {
     if (this.service) {
-      this.serviceForm.patchValue(this.service);
+      this.serviceForm.patchValue({
+        title: this.service.title,
+        description: this.service.description,
+        duration: this.service.duration,
+        price: this.service.price,
+        icon: this.service.icon
+      });
     }
   }
 
@@ -95,6 +90,5 @@ export class ServiceEditorComponent implements OnInit {
   get description() { return this.serviceForm.get('description'); }
   get duration() { return this.serviceForm.get('duration'); }
   get price() { return this.serviceForm.get('price'); }
-  get icon() { return this.serviceForm.get('icon'); }
-  get active() { return this.serviceForm.get('active'); }
+  get icon() { return this.serviceForm.get('icon'); }  
 }

@@ -67,7 +67,7 @@
         <div 
           class="service-item" 
           *ngFor="let service of services"
-          [class.inactive]="!service.active">
+          [class.inactive]="!service.isActive">
           
           <div class="service-header">
             <div class="service-icon">
@@ -77,7 +77,7 @@
               <label class="toggle-switch">
                 <input 
                   type="checkbox" 
-                  [checked]="service.active"
+                  [checked]="service.isActive"
                   (change)="toggleServiceStatus(service)">
                 <span class="toggle-slider"></span>
               </label>
@@ -140,7 +140,7 @@
         [mode]="editorMode"
         (save)="onSaveService($event)"
         (cancel)="closeEditor()"
-        (delete)="onDeleteService($event)">
+        (delete)="selectedService && onDeleteService(selectedService)">
       </app-service-editor>
     </div>
   </div>
