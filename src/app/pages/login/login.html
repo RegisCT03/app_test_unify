@@ -23,13 +23,6 @@
         class="form-input"
         [class.error]="password?.invalid && password?.touched"
       >
-      <span class="error-message" *ngIf="password?.invalid && password?.touched">
-        La contraseña debe tener al menos 8 caracteres
-      </span>
-    </div>
-
-    <div class="forgot-password">
-      <a href="#">¿Olvidaste tu contraseña?</a>
     </div>
 
     <button type="submit" class="btn-submit">Iniciar Sesión</button>
