@@ -41,7 +41,8 @@ export class ServiceEditorComponent implements OnInit {
       description: ['', [Validators.required, Validators.minLength(10)]],
       duration: [60, [Validators.required, Validators.min(15)]],
       price: [0, [Validators.required, Validators.min(0)]],
-      icon: ['assets/icons/sport.svg', Validators.required]
+      icon: ['assets/icons/sport.svg', Validators.required],
+      isActive: [true]
     });
   }
 
@@ -53,6 +54,7 @@ export class ServiceEditorComponent implements OnInit {
         duration: this.service.duration,
         price: this.service.price,
         icon: this.service.icon
+        ,isActive: this.service.isActive
       });
     }
   }
@@ -91,4 +93,5 @@ export class ServiceEditorComponent implements OnInit {
   get duration() { return this.serviceForm.get('duration'); }
   get price() { return this.serviceForm.get('price'); }
   get icon() { return this.serviceForm.get('icon'); }  
+  get isActive() { return this.serviceForm.get('isActive'); }
 }
